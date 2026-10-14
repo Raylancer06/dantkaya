@@ -149,10 +149,23 @@ export function SiteFooter() {
 
         {/* Bottom Sub-Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-ivory-bg/60">
-          <p>
-            © 2025 Dant काया Multispeciality Clinic. All Rights Reserved. Patna,
-            Bihar.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+            <p>
+              © {new Date().getFullYear()} Dant काया Multispeciality Clinic. All Rights Reserved. Patna, Bihar.
+            </p>
+            <span className="hidden sm:inline text-ivory-bg/30">•</span>
+            <p className="text-ivory-bg/75">
+              Designed &amp; Developed by{" "}
+              <a
+                href="https://raylancer.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-champagne-gold hover:text-white transition-colors underline underline-offset-2 font-medium"
+              >
+                Raylancer Services
+              </a>
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link
               className={cn(

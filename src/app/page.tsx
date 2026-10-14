@@ -13,6 +13,7 @@ import { AppointmentCTA } from "@/components/AppointmentCTA";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { HeroDoctorCarousel } from "@/components/HeroDoctorCarousel";
 
 const heroQuickTreatments = [
   {
@@ -168,65 +169,12 @@ export default function HomePage() {
             </div>
           </RevealOnScroll>
 
-          {/* Right Column: Layered Clinical Portrait + Floating Specialist & Sterility Cards */}
+          {/* Right Column: Interactive Looping Doctor Carousel + Floating Sterility Badge */}
           <RevealOnScroll
             delay={0.08}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-md">
-              {/* Top Floating Badge */}
-              <div className="hidden sm:flex items-center gap-2.5 absolute -top-4 -left-5 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl border border-border-subtle shadow-[0_12px_30px_-10px_rgba(41,37,31,0.15)]">
-                <ShieldCheck
-                  className="w-4 h-4 text-champagne-gold shrink-0"
-                  aria-hidden="true"
-                />
-                <div>
-                  <p className="text-[11px] font-bold text-espresso leading-none">
-                    Class-B Autoclave Sterility
-                  </p>
-                  <p className="text-[10px] text-muted-grey mt-0.5">
-                    3D Digital RVG Diagnostics
-                  </p>
-                </div>
-              </div>
-
-              {/* Main Portrait Card */}
-              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-ivory-secondary border border-border-subtle shadow-[0_24px_48px_-15px_rgba(41,37,31,0.16)] group">
-                <Image
-                  src="/images/dr-abhinav.jpeg"
-                  alt="Dr. Abhinav Kumar, Senior Oral & Dental Surgeon at Dant काया"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/20 to-transparent"
-                  aria-hidden="true"
-                />
-
-                <div className="absolute bottom-5 left-5 right-5 text-white flex items-end justify-between gap-4">
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#fedb9b] mb-1">
-                      SENIOR ORAL &amp; DENTAL SURGEON
-                    </p>
-                    <h2 className="font-heading font-bold text-[22px] text-white leading-tight">
-                      Dr. Abhinav Kumar
-                    </h2>
-                    <p className="text-[12px] text-white/80 font-normal mt-0.5">
-                      BDS, MBA, MIDA • Ex-Senior Dentist, Smile Foundation
-                    </p>
-                  </div>
-                  <Link
-                    href="/doctors"
-                    className="shrink-0 inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25 text-white text-[11px] font-semibold px-3 py-2 rounded-lg transition-colors"
-                  >
-                    <span>3 Specialists</span>
-                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <HeroDoctorCarousel />
           </RevealOnScroll>
         </div>
       </section>
