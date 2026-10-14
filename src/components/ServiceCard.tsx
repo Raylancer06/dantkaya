@@ -51,8 +51,7 @@ export function ServiceCard({
       <Link
         href={href}
         className={cn(
-          "block overflow-hidden bg-ivory-secondary relative",
-          variant === "featured" ? "aspect-[16/10]" : "aspect-[16/9]"
+          "block overflow-hidden bg-ivory-secondary relative aspect-[4/3]"
         )}
         tabIndex={-1}
         aria-hidden="true"
@@ -68,20 +67,20 @@ export function ServiceCard({
           )}
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-espresso/55 via-espresso/10 to-transparent opacity-80 group-hover:opacity-65 transition-opacity duration-300"
+          className="absolute inset-0 bg-gradient-to-t from-espresso/35 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300"
           aria-hidden="true"
         />
 
         {category && (
-          <span className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-ivory-bg/95 backdrop-blur-xs border border-border-subtle text-[10px] font-semibold uppercase tracking-widest text-espresso shadow-2xs">
+          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-ivory-bg/95 backdrop-blur-xs border border-border-subtle text-[10px] font-semibold uppercase tracking-wider text-espresso shadow-2xs">
             {category}
           </span>
         )}
 
         {duration && (
-          <span className="absolute bottom-3 left-3.5 inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-espresso/85 backdrop-blur-xs text-[10px] font-medium text-[#fedb9b]">
+          <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-espresso/80 backdrop-blur-xs text-[10px] font-medium text-[#fedb9b] shadow-xs">
             <Clock className="w-3 h-3" aria-hidden="true" />
-            <span className="truncate max-w-[200px]">{duration}</span>
+            <span className="truncate max-w-[180px]">{duration}</span>
           </span>
         )}
       </Link>
@@ -94,7 +93,7 @@ export function ServiceCard({
               {title}
             </Link>
           </h3>
-          <p className="text-[14px] text-muted-grey leading-relaxed line-clamp-2 mb-5">
+          <p className="text-[14px] text-muted-grey leading-relaxed line-clamp-3 mb-5">
             {description}
           </p>
         </div>

@@ -67,25 +67,24 @@ export function DoctorProfileView({ doctor }: DoctorProfileViewProps) {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 via-transparent to-transparent" />
+              </div>
 
-                {/* Floating Availability Badge */}
-                <div className="absolute bottom-5 left-5 right-5 bg-ivory-bg/95 backdrop-blur-md rounded-xl p-4 flex items-center justify-between border border-border-subtle shadow-sm">
-                  <div>
-                    <span className="text-[10px] font-semibold text-champagne-gold uppercase tracking-widest block">
-                      Clinical Availability
-                    </span>
-                    <p className="font-heading text-xs sm:text-sm font-semibold text-espresso mt-0.5">
-                      {doctor.consultationSchedule}
-                    </p>
-                  </div>
-                  <span
-                    className="w-2.5 h-2.5 rounded-full bg-champagne-gold shrink-0"
-                    aria-hidden="true"
-                  />
+              {/* Clinical Availability Badge */}
+              <div className="bg-white/95 rounded-xl p-4 flex items-center justify-between border border-border-subtle shadow-sm">
+                <div>
+                  <span className="text-[10px] font-semibold text-champagne-gold uppercase tracking-widest block">
+                    Clinical Availability
+                  </span>
+                  <p className="font-heading text-xs sm:text-sm font-semibold text-espresso mt-0.5">
+                    {doctor.consultationSchedule}
+                  </p>
                 </div>
+                <span
+                  className="w-2.5 h-2.5 rounded-full bg-champagne-gold shrink-0"
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Quick Credential Highlight Pill Matrix */}

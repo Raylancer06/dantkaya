@@ -420,7 +420,7 @@ export default function HomePage() {
                     alt="Dr. Abhinav Kumar BDS, MBA, MIDA"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-espresso/85 backdrop-blur-xs text-[#fedb9b] text-[10px] font-semibold uppercase tracking-wider">
                     BDS, MBA, MIDA
@@ -466,7 +466,7 @@ export default function HomePage() {
                     alt="Dr. Sumit Kumar BDS, FFAC"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-espresso/85 backdrop-blur-xs text-[#fedb9b] text-[10px] font-semibold uppercase tracking-wider">
                     BDS, FFAC
@@ -512,7 +512,7 @@ export default function HomePage() {
                     alt="Dr. Anisha Deb BDS, MDS, FFAC"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-espresso/85 backdrop-blur-xs text-[#fedb9b] text-[10px] font-semibold uppercase tracking-wider">
                     BDS, MDS, FFAC

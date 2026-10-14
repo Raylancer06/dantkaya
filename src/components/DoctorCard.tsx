@@ -30,19 +30,19 @@ export function DoctorCard({
         )}
       >
         {/* Portrait Column */}
-        <div className="lg:w-5/12 relative min-h-[380px] lg:min-h-[480px] bg-ivory-secondary overflow-hidden">
+        <div className="w-full lg:w-[360px] xl:w-[400px] shrink-0 relative aspect-[4/5] lg:aspect-auto min-h-[360px] lg:min-h-full bg-ivory-secondary overflow-hidden">
           <Image
             src={doctor.image}
             alt={doctor.imageAlt}
             fill
-            sizes="(max-width: 1024px) 100vw, 42vw"
+            sizes="(max-width: 1024px) 100vw, 400px"
             className={cn(
-              "object-cover object-top",
+              "object-cover object-center",
               INTERACTION_CLASSES.doctorPortraitHover
             )}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 via-transparent to-transparent lg:hidden" />
-          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-lg shadow-sm border border-border-subtle">
+          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-lg shadow-sm border border-border-subtle">
             <span className="text-[11px] font-semibold text-champagne-gold uppercase tracking-wider">
               {doctor.departmentBadge}
             </span>
@@ -163,7 +163,7 @@ export function DoctorCard({
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className={cn(
-            "object-cover object-top",
+            "object-cover object-center",
             INTERACTION_CLASSES.doctorPortraitHover
           )}
         />
