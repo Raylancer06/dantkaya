@@ -60,7 +60,7 @@ export function SiteHeader() {
                 className="w-3.5 h-3.5 text-champagne-gold shrink-0"
                 aria-hidden="true"
               />
-              <span>Mon – Sat: 09:30 AM – 08:00 PM</span>
+              <span>Tue – Sun: 09:00 AM – 08:00 PM | Mon: On Appointment</span>
             </span>
           </div>
 
@@ -93,7 +93,7 @@ export function SiteHeader() {
                 <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/dantkayapatna"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dant काया Clinic on Instagram"
@@ -115,7 +115,7 @@ export function SiteHeader() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/dantkayapatna"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dant काया Clinic on Facebook"
@@ -134,34 +134,13 @@ export function SiteHeader() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Dant काया Clinic on YouTube"
-                className="p-1 rounded text-ivory-bg/80 hover:text-[#fedb9b] transition-colors"
-              >
-                <svg
-                  className="w-3.5 h-3.5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                  <path d="m10 15 5-3-5-3z" />
-                </svg>
-              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation Row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -174,9 +153,9 @@ export function SiteHeader() {
           <Image
             src="/images/logo.png"
             alt="Dant काया Multispeciality Clinic Logo"
-            width={136}
-            height={44}
-            className="h-10 sm:h-11 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
+            width={160}
+            height={52}
+            className="h-12 sm:h-14 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
             priority
           />
         </Link>

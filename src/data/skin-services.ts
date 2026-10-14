@@ -697,77 +697,92 @@ export const skinServices: SkinServiceItem[] = [
     ],
   },
   {
-    slug: "fine-lines-wrinkle-treatment",
-    title: "Fine Lines & Wrinkle Treatment",
+    slug: "prp-treatment",
+    title: "PRP of Face & Hair",
     category: "Anti-Ageing & Pigmentation",
     shortDescription:
-      "Precision aesthetic protocols targeting forehead creases, crow's feet, frown lines, and perioral lines while preserving natural facial expression.",
+      "Autologous Platelet-Rich Plasma (PRP) therapy utilizing concentrated growth factors to stimulate hair follicle regrowth and restore youthful facial elasticity.",
     leadDoctorSlug: "dr-anisha-deb",
-    sessionDuration: "30 – 45 Minutes",
-    downtimeSummary: "Minimal to zero downtime",
-    recommendedCourse: "Customized per anatomical zone and line depth",
+    sessionDuration: "45 – 60 Minutes",
+    downtimeSummary: "Minimal (Mild redness resolves within 12–24 hours)",
+    recommendedCourse: "3 to 4 sessions spaced 4 weeks apart for optimal follicle and dermal restoration",
     overview: [
-      "Fine lines begin as dynamic creases formed during squinting, frowning, or smiling, and gradually etch into static wrinkles as dermal collagen and hyaluronic acid decline.",
-      "Drawing on comprehensive maxillofacial muscle knowledge, our FFAC-certified doctors evaluate your facial dynamics to soften expression lines and plump superficial creases—ensuring your face looks rested and natural, never frozen.",
+      "Platelet-Rich Plasma (PRP) therapy is a cutting-edge regenerative treatment harnessing the natural healing and bioactive growth factors in your own blood. A small sample of peripheral blood is centrifuged under strict sterile clinical conditions to separate concentrated platelets rich in PDGF, VEGF, and TGF-beta.",
+      "At Dant काया Multispeciality Clinic, PRP protocols are performed by our Fellowship-trained facial aesthetic practitioners. For hair thinning and early androgenic alopecia, micro-injections revitalize dormant follicles and increase hair shaft density. For facial rejuvenation, PRP triggers intense fibroblast activation, stimulating collagen and elastin synthesis for a radiant, firmer complexion.",
     ],
     indications: [
-      "Horizontal forehead lines and vertical glabellar frown lines ('11' lines)",
-      "Periorbital crow's feet around the outer corners of the eyes",
-      "Fine dehydration and smoker's lines around the lips (perioral region)",
-      "Early static creases on the cheeks and neck",
+      "Hair thinning, crown widening, and androgenetic hair loss in men and women",
+      "Post-telogen effluvium hair shedding and weakened hair follicle roots",
+      "Facial skin dullness, loss of dermal tone, and early volume laxity",
+      "Periorbital under-eye dark circles, hollows, and crepey texture",
+      "Mild acne scarring and uneven skin texture requiring biological healing",
     ],
     procedureSteps: [
       {
         step: "01",
-        title: "Dynamic & Static Muscle Assessment",
+        title: "Sterile Blood Draw & Centrifugation",
         description:
-          "Observing facial muscles in motion and at rest to map exact treatment points.",
+          "A small blood draw is spun in a specialized centrifuge to isolate platelet-rich plasma with high platelet and growth factor concentration.",
       },
       {
         step: "02",
-        title: "Targeted Micro-Precision Treatment",
+        title: "Topical Numbing & Scalp/Skin Preparation",
         description:
-          "Delivery of targeted wrinkle-relaxing or dermal resurfacing/bio-remodeling protocols under topical comfort.",
+          "The targeted treatment zone (scalp or face) is disinfected and treated with medical-grade topical anesthetic for optimal patient comfort.",
       },
       {
         step: "03",
-        title: "2-Week Clinical Review",
+        title: "Targeted Micro-Injection / Microneedling Infusion",
         description:
-          "Follow-up evaluation to verify balanced, natural symmetry.",
+          "Using ultrafine micro-needles, concentrated PRP is precisely delivered into the dermal matrix or follicular papillae layers.",
+      },
+      {
+        step: "04",
+        title: "Soothing Calming Serum & Post-Care Advisory",
+        description:
+          "Application of soothing anti-inflammatory care with detailed post-session guidance on shampooing, sun avoidance, and hydration.",
       },
     ],
     benefits: [
-      "Softens etched lines while keeping your natural smile and expressions intact",
-      "Prevents dynamic expression creases from deepening into permanent folds",
-      "Administered by doctors with specialized maxillofacial anatomy training",
+      "100% autologous biological treatment with zero risk of allergic reaction or rejection",
+      "Stimulates dormant hair follicles, improving hair density and shaft thickness",
+      "Triggers natural collagen synthesis to soften fine creases and revitalize tired skin",
+      "Doctor-performed under strict clinical sterility on Boring Canal Road, Patna",
     ],
     aftercare: [
-      "Avoid rubbing or massaging treated facial zones for 24 hours.",
-      "Maintain daily peptide moisturization and broad-spectrum SPF 50+ protection.",
+      "Avoid washing hair or strenuous sweaty exercise for 24 hours after scalp PRP.",
+      "Avoid touching or applying unprescribed cosmetics to the face for 24 hours.",
+      "Stay well hydrated and maintain consistent sun protection (SPF 50+) daily.",
+      "Adhere to the recommended maintenance cycle to maintain follicular longevity.",
     ],
     faqs: [
       {
-        question: "Will wrinkle treatment make my face look stiff or expressionless?",
+        question: "Is PRP treatment painful?",
         answer:
-          "Not at all. We use conservative, anatomically precise dosing and collagen-supportive modalities designed to soften harsh creases while preserving natural eyebrow and smile movement.",
+          "Discomfort is very mild and well-tolerated. We apply medical-grade topical numbing cream or local scalp blocks prior to micro-injections, ensuring a comfortable clinical experience.",
+      },
+      {
+        question: "How many sessions of hair or facial PRP will I need?",
+        answer:
+          "Most patients achieve noticeable results with an initial series of 3 to 4 sessions spaced 4 weeks apart, followed by maintenance sessions every 6 to 12 months.",
       },
     ],
   },
 ];
 
 const skinServiceImageMap: Record<string, string> = {
-  "skin-rejuvenation": "/images/skin-rejuvenation.png",
-  "acne-scar-treatment": "/images/skin-contouring.jpg",
+  "skin-rejuvenation": "/images/skin-rejuvenation.jpg",
+  "acne-scar-treatment": "/images/skin-microneedling.jpg",
   "laser-hair-reduction": "/images/skin-laser.jpg",
   "chemical-peels": "/images/skin-peels.jpg",
-  "microneedling": "/images/skin-contouring.jpg",
+  "microneedling": "/images/skin-microneedling.jpg",
   "hydrafacial": "/images/skin-hydrafacial.jpg",
-  "mole-wart-removal": "/images/skin-laser.jpg",
-  "anti-ageing-treatment": "/images/skin-consultation.jpg",
-  "pigmentation-treatment": "/images/skin-peels.jpg",
-  "skin-brightening": "/images/skin-hydrafacial.jpg",
-  "pore-reduction": "/images/skin-rejuvenation.png",
-  "fine-lines-wrinkle-treatment": "/images/skin-consultation.jpg",
+  "mole-wart-removal": "/images/skin-mole-removal.jpg",
+  "anti-ageing-treatment": "/images/skin-anti-ageing.jpg",
+  "pigmentation-treatment": "/images/skin-pigmentation.jpg",
+  "skin-brightening": "/images/skin-brightening.jpg",
+  "pore-reduction": "/images/skin-pore-reduction.jpg",
+  "prp-treatment": "/images/skin-prp.jpg",
 };
 
 for (const item of skinServices) {

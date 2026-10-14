@@ -52,12 +52,12 @@ export const clinicInfo: ClinicInfo = {
   hindiTitle: "काया",
   subtitle: "Multispeciality Clinic",
   tagline: "Clinical Precision in Modern Dentistry & Skin Aesthetics",
-  phoneDisplay: "+91 89339 32525",
-  phoneRaw: "+918933932525",
-  whatsappNumber: "918933932525",
+  phoneDisplay: "+91 9189332525",
+  phoneRaw: "+919189332525",
+  whatsappNumber: "919189332525",
   whatsappUrl:
-    "https://wa.me/918933932525?text=Hello%20Dant%20%E0%A4%95%E0%A4%BE%E0%A4%AF%E0%A4%BE%20Clinic,%20I%20would%20like%20to%20schedule%20a%20consultation.",
-  email: "care@dantkaya.com",
+    "https://wa.me/919189332525?text=Hello%20Dant%20%E0%A4%95%E0%A4%BE%E0%A4%AF%E0%A4%BE%20Clinic,%20I%20would%20like%20to%20schedule%20a%20consultation.",
+  email: "appointment@dantkaya.com",
   address: {
     street: "Boring Canal Road",
     landmark: "Near Reliance Trends",
@@ -68,17 +68,17 @@ export const clinicInfo: ClinicInfo = {
     short: "Boring Canal Road, Near Reliance Trends, Patna - 800001",
   },
   hours: {
-    weekdays: "Mon – Sat: 09:30 AM – 08:00 PM",
-    sunday: "Sunday: By Prior Appointment",
+    weekdays: "Tue – Sun: 09:00 AM – 08:00 PM",
+    sunday: "Tue – Sun: 09:00 AM – 08:00 PM",
     detailed: [
       {
-        days: "Monday – Saturday",
-        time: "09:30 AM – 08:00 PM",
+        days: "Tuesday – Sunday",
+        time: "09:00 AM – 08:00 PM",
         note: "Specialist OPD & Clinical Procedures",
       },
       {
-        days: "Sunday",
-        time: "By Prior Appointment",
+        days: "Monday",
+        time: "On Appointment",
         note: "Scheduled Consultations & Urgent Dental Care",
       },
     ],
@@ -95,8 +95,14 @@ export const clinicInfo: ClinicInfo = {
       description: "Comprehensive Oral & Restorative Care",
     },
     {
+      id: "pediatric",
+      label: "Pediatric Dentistry",
+      href: "/dental-services/child-dental-treatment",
+      description: "Gentle Care for Children & Adolescents",
+    },
+    {
       id: "skin",
-      label: "Skin",
+      label: "Skin & Aesthetics",
       href: "/skin-aesthetics",
       description: "Clinical Dermatology & Facial Rejuvenation",
     },

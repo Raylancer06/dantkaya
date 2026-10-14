@@ -119,7 +119,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         message:
-          "We encountered a temporary issue processing your request. Please call or WhatsApp us directly at +91 89339 32525.",
+          `We encountered a temporary issue processing your request. Please call or WhatsApp us directly at ${clinicInfo.phoneDisplay}.`,
       },
       { status: 500 }
     );

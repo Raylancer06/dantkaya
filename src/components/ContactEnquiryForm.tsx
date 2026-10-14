@@ -14,6 +14,7 @@ import {
   contactEnquirySchema,
   type ContactEnquiryValues,
 } from "@/lib/validation";
+import { clinicInfo } from "@/data/clinic";
 import { cn } from "@/lib/utils";
 import { designSystem } from "@/lib/design-system";
 
@@ -65,7 +66,7 @@ export function ContactEnquiryForm() {
       });
     } catch {
       setServerError(
-        "Unable to connect right now. Please call or WhatsApp +91 89339 32525."
+        `Unable to connect right now. Please call or WhatsApp ${clinicInfo.phoneDisplay}.`
       );
     }
   };

@@ -25,13 +25,16 @@ export function SiteFooter() {
               <Image
                 src="/images/logo.png"
                 alt="Dant काया Multispeciality Clinic Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                width={150}
+                height={50}
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fedb9b]">
+              Multispeciality Clinic • Patna
+            </p>
 
-            <p className="text-[14px] text-ivory-bg/75 leading-relaxed pt-2">
+            <p className="text-[14px] text-ivory-bg/75 leading-relaxed pt-1">
               A sanctuary in Patna designed around unhurried precision,
               biological stability, Class-B autoclave sterilization, and
               holistic aesthetic harmony.
@@ -43,8 +46,8 @@ export function SiteFooter() {
                 Boring Canal Road, Near Reliance Trends, Patna, Bihar
               </p>
               <p>
-                <strong className="text-white font-medium">Hours:</strong> Mon –
-                Sat: 09:30 AM – 08:00 PM | Sun By Appointment
+                <strong className="text-white font-medium">Hours:</strong> Tue –
+                Sun: 09:00 AM – 08:00 PM | Mon: On Appointment
               </p>
               <p>
                 <strong className="text-white font-medium">
@@ -52,12 +55,26 @@ export function SiteFooter() {
                 </strong>{" "}
                 <a
                   className={cn(
-                    "text-champagne-gold hover:underline rounded-xs",
+                    "text-champagne-gold hover:underline rounded-xs font-semibold",
                     designSystem.focusRing
                   )}
                   href={`tel:${clinicInfo.phoneRaw}`}
                 >
                   {clinicInfo.phoneDisplay}
+                </a>
+              </p>
+              <p>
+                <strong className="text-white font-medium">
+                  Email Desk:
+                </strong>{" "}
+                <a
+                  className={cn(
+                    "text-champagne-gold hover:underline rounded-xs",
+                    designSystem.focusRing
+                  )}
+                  href={`mailto:${clinicInfo.email}`}
+                >
+                  {clinicInfo.email}
                 </a>
               </p>
             </div>

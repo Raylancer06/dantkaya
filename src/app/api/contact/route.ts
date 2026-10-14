@@ -87,7 +87,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         message:
-          "Unable to submit your enquiry right now. Please call or WhatsApp +91 89339 32525 directly.",
+          `Unable to submit your enquiry right now. Please call or WhatsApp ${clinicInfo.phoneDisplay} directly.`,
       },
       { status: 500 }
     );

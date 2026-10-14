@@ -11,7 +11,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Contact & Clinic Location — Boring Canal Road, Near Reliance Trends, Patna",
   description:
-    "Visit Dant काया Multispeciality Clinic at Boring Canal Road, Near Reliance Trends, Patna, Bihar 800001. Call or WhatsApp +91 89339 32525 for dental and skin consultations.",
+    "Visit Dant काया Multispeciality Clinic at Boring Canal Road, Near Reliance Trends, Patna, Bihar 800001. Call or WhatsApp +91 9189332525 for dental and skin consultations.",
   alternates: {
     canonical: "/contact",
   },

@@ -15,7 +15,6 @@ import {
   skinServices,
   getSkinServiceBySlug,
 } from "@/data/skin-services";
-import { getDoctorBySlug } from "@/data/doctors";
 import { PageHero } from "@/components/PageHero";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { WhatsAppContactButton } from "@/components/WhatsAppContactButton";
@@ -63,7 +62,6 @@ export default async function SkinServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const leadDoctor = getDoctorBySlug(service.leadDoctorSlug);
   const relatedServices = skinServices
     .filter((s) => s.slug !== service.slug && s.category === service.category)
     .slice(0, 3);
@@ -320,65 +318,9 @@ export default async function SkinServiceDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Right 4 Columns: Specialist & Clinic Sidebar */}
+            {/* Right 4 Columns: Clinic Coordinates Sidebar */}
             <aside className="lg:col-span-4 space-y-8">
-              {leadDoctor && (
-                <RevealOnScroll>
-                  <div className="bg-white rounded-lg p-7 border border-border-subtle shadow-xs">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-champagne-gold block mb-3">
-                      Supervising Specialist
-                    </span>
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="relative w-16 h-20 rounded-md overflow-hidden bg-ivory-secondary border border-border-subtle shrink-0">
-                        <Image
-                          src={leadDoctor.image}
-                          alt={leadDoctor.imageAlt}
-                          fill
-                          sizes="64px"
-                          className="object-cover object-top"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-heading text-lg font-bold text-espresso">
-                          <Link
-                            href={`/doctors/${leadDoctor.slug}`}
-                            className="hover:text-champagne-gold transition-colors"
-                          >
-                            {leadDoctor.name}
-                          </Link>
-                        </h3>
-                        <p className="text-xs font-semibold text-champagne-gold">
-                          {leadDoctor.credentials}
-                        </p>
-                        <p className="text-xs text-muted-grey mt-0.5">
-                          Facial Aesthetics &amp; Dental Specialist
-                        </p>
-                      </div>
-                    </div>
-
-                    <p className="text-xs text-muted-grey leading-relaxed mb-5">
-                      {leadDoctor.homepageSummary}
-                    </p>
-
-                    <div className="flex flex-col gap-2.5">
-                      <Link
-                        href={`/book-appointment?doctor=${leadDoctor.slug}&service=${service.slug}`}
-                        className="w-full text-center bg-espresso hover:bg-espresso-dark text-white text-xs font-medium py-3 px-4 rounded-[6px] transition-colors"
-                      >
-                        Book with {leadDoctor.name}
-                      </Link>
-                      <Link
-                        href={`/doctors/${leadDoctor.slug}`}
-                        className="w-full text-center border border-border-subtle hover:border-champagne-gold text-espresso text-xs font-medium py-2.5 px-4 rounded-[6px] transition-colors"
-                      >
-                        View Doctor Profile
-                      </Link>
-                    </div>
-                  </div>
-                </RevealOnScroll>
-              )}
-
-              <RevealOnScroll delay={0.08}>
+              <RevealOnScroll>
                 <ContactInformation variant="sidebar" />
               </RevealOnScroll>
             </aside>

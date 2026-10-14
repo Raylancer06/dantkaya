@@ -1093,29 +1093,26 @@ export const dentalServices: DentalServiceItem[] = [
 
 const dentalServiceImageMap: Record<string, string> = {
   "root-canal-treatment": "/images/dental-root-canal.png",
-  "dental-implants": "/images/dental-implants.png",
+  "dental-implants": "/images/dental-implants.jpg",
   "clear-aligners": "/images/dental-aligners.png",
-  "digital-x-ray": "/images/dental-microscope.jpg",
-  "child-dental-treatment": "/images/clinic-lounge.jpg",
-  "braces": "/images/dental-clear-aligner.jpg",
-  "teeth-cleaning": "/images/dental-instruments.jpg",
-  "dentures": "/images/dental-crown.jpg",
+  "digital-x-ray": "/images/dental-xray.jpg",
+  "child-dental-treatment": "/images/dental-pediatric.jpg",
+  "braces": "/images/dental-braces.jpg",
+  "teeth-cleaning": "/images/dental-teeth-cleaning.jpg",
+  "dentures": "/images/dental-dentures.jpg",
   "crown-and-bridge": "/images/dental-crown.jpg",
-  "gum-problems-treatment": "/images/dental-endodontics.jpg",
-  "oral-surgery": "/images/dental-titanium-implant.jpg",
-  "dental-jewellery": "/images/dental-aligner-tray.jpg",
-  "smile-designing": "/images/dental-aligners.png",
-  "teeth-whitening": "/images/dental-clear-aligner.jpg",
-  "third-molar-surgery": "/images/dental-microscope.jpg",
-  "full-mouth-rehabilitation": "/images/dental-implant-studio.jpg",
-  "cosmetic-filling-restoration": "/images/dental-instruments.jpg",
+  "gum-problems-treatment": "/images/dental-gum-care.jpg",
+  "oral-surgery": "/images/dental-surgery.jpg",
+  "dental-jewellery": "/images/dental-jewellery.jpg",
+  "smile-designing": "/images/dental-smile-design.jpg",
+  "teeth-whitening": "/images/dental-teeth-whitening.jpg",
+  "third-molar-surgery": "/images/dental-wisdom-tooth.jpg",
+  "full-mouth-rehabilitation": "/images/dental-full-mouth-rehab.jpg",
+  "cosmetic-filling-restoration": "/images/dental-restorative.jpg",
 };
 
 for (const item of dentalServices) {
-  if (!item.image) {
-    item.image =
-      dentalServiceImageMap[item.slug] || "/images/dental-root-canal.png";
-  }
+  item.image = dentalServiceImageMap[item.slug] || item.image || "/images/dental-root-canal.png";
   if (!item.imageAlt) {
     item.imageAlt = `${item.title} — Clinical Dental Care at Dant काया Multispeciality Clinic, Patna`;
   }

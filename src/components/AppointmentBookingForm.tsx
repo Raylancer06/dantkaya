@@ -115,7 +115,7 @@ export function AppointmentBookingForm() {
       if (!response.ok || !result.ok) {
         setServerError(
           result.message ||
-            "Please check the form fields or call +91 89339 32525 directly."
+            `Please check the form fields or call ${clinicInfo.phoneDisplay} directly.`
         );
         return;
       }
@@ -131,7 +131,7 @@ export function AppointmentBookingForm() {
       });
     } catch {
       setServerError(
-        "Network error while submitting your request. Please call or WhatsApp +91 89339 32525."
+        `Network error while submitting your request. Please call or WhatsApp ${clinicInfo.phoneDisplay}.`
       );
     }
   };
@@ -362,6 +362,7 @@ export function AppointmentBookingForm() {
             {...register("department")}
           >
             <option value="dental">Dental Care &amp; Endodontics</option>
+            <option value="pediatric">Pediatric Dentistry (Children)</option>
             <option value="skin">Skin, Laser &amp; Facial Aesthetics</option>
             <option value="implant">Dental Implants &amp; Oral Surgery</option>
             <option value="aligners">Clear Aligners &amp; Orthodontics</option>

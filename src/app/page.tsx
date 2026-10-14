@@ -98,8 +98,11 @@ export default function HomePage() {
                 className="w-2 h-2 rounded-full bg-champagne-gold inline-block"
                 aria-hidden="true"
               />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-espresso">
-                DANT काया MULTISPECIALITY CLINIC • PATNA
+              <span className="text-[14px] sm:text-[15px] font-bold text-espresso tracking-tight">
+                Dant काया
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.16em] text-muted-grey">
+                • Multispeciality Clinic • Patna
               </span>
             </div>
 
@@ -191,7 +194,7 @@ export default function HomePage() {
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-ivory-secondary border border-border-subtle shadow-[0_24px_48px_-15px_rgba(41,37,31,0.16)] group">
                 <Image
                   src="/images/dr-abhinav.jpeg"
-                  alt="Dr. Abhinav Kumar, Senior Dental Surgeon & Founder at Dant काया"
+                  alt="Dr. Abhinav Kumar, Senior Oral & Dental Surgeon at Dant काया"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -205,7 +208,7 @@ export default function HomePage() {
                 <div className="absolute bottom-5 left-5 right-5 text-white flex items-end justify-between gap-4">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#fedb9b] mb-1">
-                      FOUNDER &amp; LEAD SURGEON
+                      SENIOR ORAL &amp; DENTAL SURGEON
                     </p>
                     <h2 className="font-heading font-bold text-[22px] text-white leading-tight">
                       Dr. Abhinav Kumar

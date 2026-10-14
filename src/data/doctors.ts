@@ -119,8 +119,8 @@ export const doctors: DoctorProfile[] = [
       },
       {
         label: "Schedule",
-        value: "OPD: Mon – Sat",
-        subtext: "10:00 AM – 08:00 PM",
+        value: "Tue – Sun (OPD)",
+        subtext: "09:00 AM – 08:00 PM (Mon By Appt)",
       },
     ],
     clinicalTenet: {
@@ -246,7 +246,7 @@ export const doctors: DoctorProfile[] = [
       ],
       skin: [],
     },
-    consultationSchedule: "Monday – Saturday | 10:00 AM – 08:00 PM",
+    consultationSchedule: "Tuesday – Sunday (09:00 AM – 08:00 PM) | Monday on appointment",
   },
   {
     slug: "dr-sumit-kumar",
@@ -257,7 +257,7 @@ export const doctors: DoctorProfile[] = [
     shortRole: "Oral & Dental Surgeon",
     roleSubtitle:
       "Oral & Dental Surgeon | Facial Aesthetics & Clinical Cosmetology | Ex-Resident, Realtooth, Lucknow",
-    departmentBadge: "Aesthetic & Surgical Lead",
+    departmentBadge: "Oral & Dental Surgeon",
     pastAffiliation: "Resident, Realtooth, Lucknow",
     image: "/images/dr-sumit.jpeg",
     imageAlt:
@@ -440,7 +440,7 @@ export const doctors: DoctorProfile[] = [
         "microneedling",
       ],
     },
-    consultationSchedule: "Monday – Saturday | 10:00 AM – 08:00 PM",
+    consultationSchedule: "Tuesday – Sunday (09:00 AM – 08:00 PM) | Monday on appointment",
   },
   {
     slug: "dr-anisha-deb",
@@ -631,12 +631,12 @@ export const doctors: DoctorProfile[] = [
         "anti-ageing-treatment",
         "pigmentation-treatment",
         "skin-brightening",
-        "fine-lines-wrinkle-treatment",
+        "prp-treatment",
         "chemical-peels",
         "pore-reduction",
       ],
     },
-    consultationSchedule: "Monday – Saturday | 10:00 AM – 07:30 PM",
+    consultationSchedule: "Tuesday – Sunday (09:00 AM – 08:00 PM) | Monday on appointment",
   },
 ];
 

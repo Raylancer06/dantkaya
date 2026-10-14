@@ -20,7 +20,7 @@ export const appointmentRequestSchema = z.object({
     .optional()
     .or(z.literal("")),
   department: z.enum(
-    ["dental", "skin", "implant", "aligners", "general"],
+    ["dental", "skin", "implant", "aligners", "pediatric", "general"],
     {
       errorMap: () => ({ message: "Please select a clinical department." }),
     }
