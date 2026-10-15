@@ -140,7 +140,7 @@ export function SiteHeader() {
       </div>
 
       {/* Main Navigation Row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[80px] sm:h-[86px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -153,9 +153,9 @@ export function SiteHeader() {
           <Image
             src="/images/logo.png"
             alt="Dant काया Multispeciality Clinic Logo"
-            width={160}
-            height={52}
-            className="h-12 sm:h-14 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
+            width={200}
+            height={68}
+            className="h-[58px] sm:h-[68px] w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
             priority
           />
         </Link>

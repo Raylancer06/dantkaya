@@ -71,7 +71,7 @@ export const doctors: DoctorProfile[] = [
     shortRole: "Oral & Dental Surgeon",
     roleSubtitle:
       "Senior Dentist | Oral & Dental Surgeon | Healthcare Administrator",
-    departmentBadge: "Department Lead",
+    departmentBadge: "Oral & Dental Surgeon",
     pastAffiliation: "Ex Senior Dentist, Smile Foundation, New Delhi",
     image: "/images/dr-abhinav.jpeg",
     imageAlt:
@@ -451,7 +451,7 @@ export const doctors: DoctorProfile[] = [
     shortRole: "Root Canal Specialist",
     roleSubtitle:
       "Conservative Dentistry & Endodontics • Root Canal Specialist • Facial Aesthetics & Clinical Cosmetology",
-    departmentBadge: "Endodontic Specialist",
+    departmentBadge: "Root Canal Specialist",
     pastAffiliation:
       "Ex Consultant Endodontist, Max Superspeciality Hospital, New Delhi",
     image: "/images/dr-anisha.jpeg",

@@ -47,8 +47,8 @@ export default function SkinAestheticsPage() {
         eyebrow="Department of Facial Aesthetics & Laser"
         title={
           <>
-            Doctor-Led Dermatology, Laser &amp;{" "}
-            <span className="text-champagne-gold">Facial Rejuvenation.</span>
+            Doctor-Led Skin, Laser &amp;{" "}
+            <span className="text-champagne-gold">Facial Aesthetics.</span>
           </>
         }
         description="Safe, evidence-based clinical skin protocols calibrated for Indian skin tones and supervised by FFAC-certified facial aesthetic specialists."
@@ -67,7 +67,7 @@ export default function SkinAestheticsPage() {
             <div className="relative aspect-[16/10] w-full bg-ivory-secondary">
               <Image
                 src="/images/skin-consultation.jpg"
-                alt="Dermatology and Facial Aesthetics Consultation at Dant काया Clinic"
+                alt="Skin, Laser and Facial Aesthetics Consultation at Dant काया Clinic"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 38vw"

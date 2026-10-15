@@ -18,7 +18,7 @@ const DOCTOR_SLIDES: DoctorSlide[] = [
   {
     id: "dr-abhinav",
     name: "Dr. Abhinav Kumar",
-    role: "SENIOR ORAL & DENTAL SURGEON",
+    role: "ORAL & DENTAL SURGEON",
     credentials: "BDS, MBA, MIDA • Ex-Senior Dentist, Smile Foundation",
     image: "/images/dr-abhinav.jpeg",
     slug: "dr-abhinav-kumar",
@@ -34,7 +34,7 @@ const DOCTOR_SLIDES: DoctorSlide[] = [
   {
     id: "dr-anisha",
     name: "Dr. Anisha Deb",
-    role: "MDS ROOT CANAL & FACIAL SPECIALIST",
+    role: "ROOT CANAL SPECIALIST",
     credentials: "BDS, MDS, FFAC • Ex-Max Hospital, New Delhi",
     image: "/images/dr-anisha.jpeg",
     slug: "dr-anisha-deb",
