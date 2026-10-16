@@ -43,11 +43,11 @@ const DOCTOR_SLIDES: DoctorSlide[] = [
 
 // For seamless infinite loop sliding: [clone_last, slide_0, slide_1, slide_2, clone_first]
 const EXTENDED_SLIDES = [
-  { ...DOCTOR_SLIDES[2], cloneKey: "clone-end" },
-  { ...DOCTOR_SLIDES[0], cloneKey: "slide-0" },
-  { ...DOCTOR_SLIDES[1], cloneKey: "slide-1" },
-  { ...DOCTOR_SLIDES[2], cloneKey: "slide-2" },
-  { ...DOCTOR_SLIDES[0], cloneKey: "clone-start" },
+  { ...DOCTOR_SLIDES[2], cloneKey: "clone-end" },    // index 0: Clone of Dr. Anisha
+  { ...DOCTOR_SLIDES[0], cloneKey: "slide-0" },       // index 1: Dr. Abhinav
+  { ...DOCTOR_SLIDES[1], cloneKey: "slide-1" },       // index 2: Dr. Sumit
+  { ...DOCTOR_SLIDES[2], cloneKey: "slide-2" },       // index 3: Dr. Anisha
+  { ...DOCTOR_SLIDES[0], cloneKey: "clone-start" },     // index 4: Clone of Dr. Abhinav
 ];
 
 const AUTOPLAY_INTERVAL_MS = 4000;
@@ -58,59 +58,81 @@ export function HeroDoctorCarousel() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const isJumping = useRef(false);
   const touchStartX = useRef<number | null>(null);
 
-  // Determine active doctor index (0, 1, or 2) for indicators
+  // Strictly clamp index to array bounds so it can NEVER slide into blank space
+  const safeIndex = Math.max(0, Math.min(currentIndex, EXTENDED_SLIDES.length - 1));
+
+  // Determine active doctor index (0, 1, or 2) for indicator dots
   const activeSlideIndex =
-    currentIndex === 0
+    safeIndex === 0 || safeIndex === 3
       ? 2
-      : currentIndex === 4
+      : safeIndex === 4 || safeIndex === 1
       ? 0
-      : currentIndex - 1;
+      : 1;
 
+  // Next slide with strict boundary wrapping
   const goToNext = useCallback(() => {
-    if (isJumping.current) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => prev + 1);
+    setCurrentIndex((prev) => {
+      // If already at or beyond the clone of slide 0 (index 4), loop immediately
+      if (prev >= EXTENDED_SLIDES.length - 1) {
+        setIsTransitioning(false);
+        return 2;
+      }
+      setIsTransitioning(true);
+      return prev + 1;
+    });
   }, []);
 
+  // Previous slide with strict boundary wrapping
   const goToPrev = useCallback(() => {
-    if (isJumping.current) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => prev - 1);
+    setCurrentIndex((prev) => {
+      if (prev <= 0) {
+        setIsTransitioning(false);
+        return EXTENDED_SLIDES.length - 3;
+      }
+      setIsTransitioning(true);
+      return prev - 1;
+    });
   }, []);
 
+  // Jump to specific slide (0, 1, or 2)
   const goToSlide = useCallback((targetIndex: number) => {
-    if (isJumping.current) return;
     setIsTransitioning(true);
     setCurrentIndex(targetIndex + 1);
   }, []);
 
-  // Handle wrap-around when hitting clones without visible jump
-  const handleTransitionEnd = () => {
+  // Guaranteed timer-based snap to prevent getting stuck on clones (even if transitionend is skipped by browser)
+  useEffect(() => {
     if (currentIndex === EXTENDED_SLIDES.length - 1) {
-      // Reached clone of first slide (index 4) -> instantly reset to real first slide (index 1)
-      isJumping.current = true;
-      setIsTransitioning(false);
-      setCurrentIndex(1);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          isJumping.current = false;
-        });
-      });
-    } else if (currentIndex === 0) {
-      // Reached clone of last slide (index 0) -> instantly reset to real last slide (index 3)
-      isJumping.current = true;
-      setIsTransitioning(false);
-      setCurrentIndex(EXTENDED_SLIDES.length - 2);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          isJumping.current = false;
-        });
-      });
+      // We slid to the clone of slide 0 (index 4). After the transition ends, snap back to real slide 0 (index 1).
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(1);
+      }, TRANSITION_DURATION_MS);
+      return () => clearTimeout(timer);
     }
-  };
+
+    if (currentIndex === 0) {
+      // We slid to the clone of slide 2 (index 0). After transition ends, snap to real slide 2 (index 3).
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(EXTENDED_SLIDES.length - 2);
+      }, TRANSITION_DURATION_MS);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
+
+  // Pause autoplay when browser tab is inactive to prevent out-of-sync jumps
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsPaused(document.hidden);
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   // Autoplay loop timer
   useEffect(() => {
@@ -153,9 +175,8 @@ export function HeroDoctorCarousel() {
         {/* Horizontal Infinite Slider Track */}
         <div
           className="flex h-full w-full"
-          onTransitionEnd={handleTransitionEnd}
           style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
+            transform: `translateX(-${safeIndex * 100}%)`,
             transition: isTransitioning
               ? `transform ${TRANSITION_DURATION_MS}ms cubic-bezier(0.25, 1, 0.5, 1)`
               : "none",
@@ -237,14 +258,14 @@ export function HeroDoctorCarousel() {
           <button
             onClick={goToPrev}
             aria-label="Previous specialist"
-            className="pointer-events-auto w-9 h-9 rounded-full bg-espresso/50 hover:bg-espresso/80 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-200 opacity-80 group-hover:opacity-100 hover:scale-105 shadow-md active:scale-95"
+            className="pointer-events-auto w-9 h-9 rounded-full bg-espresso/50 hover:bg-espresso/80 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-200 opacity-80 group-hover:opacity-100 hover:scale-105 shadow-md active:scale-95 cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={goToNext}
             aria-label="Next specialist"
-            className="pointer-events-auto w-9 h-9 rounded-full bg-espresso/50 hover:bg-espresso/80 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-200 opacity-80 group-hover:opacity-100 hover:scale-105 shadow-md active:scale-95"
+            className="pointer-events-auto w-9 h-9 rounded-full bg-espresso/50 hover:bg-espresso/80 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-200 opacity-80 group-hover:opacity-100 hover:scale-105 shadow-md active:scale-95 cursor-pointer"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
