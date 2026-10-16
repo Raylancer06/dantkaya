@@ -92,7 +92,7 @@ export function MobileNavigation() {
               animate={prefersReducedMotion ? { opacity: 1 } : "visible"}
               exit={prefersReducedMotion ? { opacity: 0 } : "exit"}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 top-[108px] bg-espresso/40 backdrop-blur-xs z-40"
+              className="fixed inset-0 top-[117px] sm:top-[123px] bg-espresso/40 backdrop-blur-xs z-40"
               aria-hidden="true"
             />
 
@@ -107,7 +107,7 @@ export function MobileNavigation() {
               initial={prefersReducedMotion ? { opacity: 1 } : "hidden"}
               animate={prefersReducedMotion ? { opacity: 1 } : "visible"}
               exit={prefersReducedMotion ? { opacity: 0 } : "exit"}
-              className="fixed left-0 right-0 top-[108px] max-h-[calc(100dvh-108px)] overflow-y-auto bg-ivory-bg border-b border-border-subtle shadow-2xl z-50 px-6 py-6"
+              className="fixed left-0 right-0 top-[117px] sm:top-[123px] max-h-[calc(100dvh-117px)] sm:max-h-[calc(100dvh-123px)] overflow-y-auto bg-ivory-bg border-b border-border-subtle shadow-2xl z-50 px-6 py-6"
             >
               <nav aria-label="Mobile navigation links" className="space-y-1">
                 {primaryNavigation.map((item) => {

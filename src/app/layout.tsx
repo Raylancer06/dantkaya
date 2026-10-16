@@ -106,7 +106,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <SiteHeader />
-        <main id="main-content" className="flex-grow pt-[108px]">
+        <main id="main-content" className="flex-grow">
           {children}
         </main>
         <SiteFooter />

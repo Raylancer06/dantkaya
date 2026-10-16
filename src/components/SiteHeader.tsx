@@ -27,7 +27,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-[background-color,box-shadow,border-color] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        "sticky top-0 z-50 backdrop-blur-md border-b transition-[background-color,box-shadow,border-color] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
         scrolled
           ? "bg-[#F8F5EF]/98 border-border-subtle shadow-[0_8px_24px_-12px_rgba(41,37,31,0.08)]"
           : "bg-[#F8F5EF]/95 border-border-subtle/80"
