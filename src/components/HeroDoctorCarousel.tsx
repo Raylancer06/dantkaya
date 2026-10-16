@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface DoctorSlide {
   id: string;
@@ -147,22 +147,6 @@ export function HeroDoctorCarousel() {
       aria-roledescription="carousel"
       aria-label="Clinical Specialists Infinite Loop Slider"
     >
-      {/* Top Floating Authority Badge */}
-      <div className="hidden sm:flex items-center gap-2.5 absolute -top-4 -left-5 z-30 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl border border-border-subtle shadow-[0_12px_30px_-10px_rgba(41,37,31,0.15)] pointer-events-none">
-        <ShieldCheck
-          className="w-4 h-4 text-champagne-gold shrink-0"
-          aria-hidden="true"
-        />
-        <div>
-          <p className="text-[11px] font-bold text-espresso leading-none">
-            Class-B Autoclave Sterility
-          </p>
-          <p className="text-[10px] text-muted-grey mt-0.5">
-            3D Digital RVG Diagnostics
-          </p>
-        </div>
-      </div>
-
       {/* Main Viewport Container */}
       <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-ivory-secondary border border-border-subtle shadow-[0_24px_48px_-15px_rgba(41,37,31,0.16)] group">
         

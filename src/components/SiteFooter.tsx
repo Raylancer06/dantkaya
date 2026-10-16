@@ -25,9 +25,9 @@ export function SiteFooter() {
               <Image
                 src="/images/logo.png"
                 alt="Dant काया Multispeciality Clinic Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto object-contain brightness-0 invert"
+                width={180}
+                height={60}
+                className="h-[58px] w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fedb9b]">

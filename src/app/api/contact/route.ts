@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 import { contactEnquirySchema } from "@/lib/validation";
 import { clinicInfo } from "@/data/clinic";
+import { sendContactEnquiryEmails } from "@/lib/email";
 
 /**
  * POST /api/contact
  *
  * Documented Integration Point for General Clinic Enquiries:
- * Validates user input via `contactEnquirySchema`, logs or forwards to
- * `process.env.CONTACT_WEBHOOK_URL` if configured, and returns a structured
- * reference ID and direct WhatsApp link.
+ * Validates user input via `contactEnquirySchema`, sends email to appointment@dantkaya.com
+ * and confirmation to customer, logs or forwards to webhook if configured.
  */
 export async function POST(request: Request) {
   try {
@@ -42,6 +42,15 @@ export async function POST(request: Request) {
       subject: data.subject,
       message: data.message,
     };
+
+    // Send email to appointment@dantkaya.com and confirmation email to sender
+    const emailResult = await sendContactEnquiryEmails({
+      referenceId,
+      submittedAt,
+      sender: enquiryRecord.sender,
+      subject: data.subject,
+      message: data.message,
+    });
 
     const webhookUrl =
       process.env.CONTACT_WEBHOOK_URL || process.env.APPOINTMENT_WEBHOOK_URL;
@@ -77,6 +86,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       ok: true,
       referenceId,
+      emailDelivered: emailResult.clinicDelivered,
+      senderEmailDelivered: emailResult.senderDelivered,
       whatsappFollowUpUrl,
       message:
         "Thank you for reaching out to Dant काया Multispeciality Clinic. Your enquiry has been recorded and our reception team will respond via telephone or WhatsApp during clinic hours.",

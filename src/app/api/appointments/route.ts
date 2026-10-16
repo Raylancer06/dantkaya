@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { appointmentRequestSchema } from "@/lib/validation";
 import { clinicInfo } from "@/data/clinic";
+import { sendAppointmentEmails } from "@/lib/email";
 
 /**
  * POST /api/appointments
@@ -61,6 +62,14 @@ export async function POST(request: Request) {
       },
     };
 
+    // Send email to appointment@dantkaya.com and confirmation email to patient
+    const emailResult = await sendAppointmentEmails({
+      referenceId,
+      submittedAt,
+      patient: payloadRecord.patient,
+      request: payloadRecord.request,
+    });
+
     // Optional external webhook / notification service integration
     const webhookUrl = process.env.APPOINTMENT_WEBHOOK_URL;
     let webhookDelivered = false;
@@ -109,6 +118,8 @@ export async function POST(request: Request) {
       referenceId,
       status: "pending_reception_confirmation",
       webhookDelivered,
+      emailDelivered: emailResult.clinicDelivered,
+      patientEmailDelivered: emailResult.patientDelivered,
       whatsappFollowUpUrl,
       message:
         "Your consultation request has been registered. Please note that submitting this request does not automatically confirm a slot—our reception desk will call or WhatsApp you to verify doctor availability and confirm your exact appointment time.",
