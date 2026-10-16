@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export const EARLIEST_APPOINTMENT_DATE = "2026-10-27";
+
 export const appointmentRequestSchema = z.object({
   fullName: z
     .string()
@@ -37,11 +39,10 @@ export const appointmentRequestSchema = z.object({
     .refine(
       (val) => {
         const selected = new Date(`${val}T00:00:00`);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        return !Number.isNaN(selected.getTime()) && selected >= today;
+        const earliest = new Date(`${EARLIEST_APPOINTMENT_DATE}T00:00:00`);
+        return !Number.isNaN(selected.getTime()) && selected >= earliest;
       },
-      { message: "Preferred date must be today or a future date." }
+      { message: "Appointments are available starting from 27 October 2026 onwards." }
     ),
   preferredTimeSlot: z.enum(
     [
