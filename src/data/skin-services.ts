@@ -108,7 +108,7 @@ export const skinServices: SkinServiceItem[] = [
       "Evidence-based medical protocols to control active inflammatory breakouts and remodel depressed post-acne scars through collagen induction.",
     featuredOnHome: true,
     featuredOrder: 2,
-    image: "/images/skin-rejuvenation.png",
+    image: "/images/skin-acne-scar.jpg",
     imageAlt:
       "Clinical Acne and Scar Revision Treatment at Dant काया Multispeciality Clinic",
     leadDoctorSlug: "dr-sumit-kumar",
@@ -772,7 +772,7 @@ export const skinServices: SkinServiceItem[] = [
 
 const skinServiceImageMap: Record<string, string> = {
   "skin-rejuvenation": "/images/skin-rejuvenation.jpg",
-  "acne-scar-treatment": "/images/skin-microneedling.jpg",
+  "acne-scar-treatment": "/images/skin-acne-scar.jpg",
   "laser-hair-reduction": "/images/skin-laser.jpg",
   "chemical-peels": "/images/skin-peels.jpg",
   "microneedling": "/images/skin-microneedling.jpg",

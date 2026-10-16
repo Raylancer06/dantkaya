@@ -40,7 +40,7 @@ export const dentalServices: DentalServiceItem[] = [
       "Specialist single-sitting and multi-sitting endodontic therapy led by MDS Endodontist Dr. Anisha Deb to eliminate deep infection and preserve your natural tooth.",
     featuredOnHome: true,
     featuredOrder: 1,
-    image: "/images/dental-root-canal.png",
+    image: "/images/dental-root-canal.jpg",
     imageAlt:
       "Microscopic Root Canal Treatment and Endodontic Care at Dant काया Multispeciality Clinic",
     leadDoctorSlug: "dr-anisha-deb",
@@ -1092,7 +1092,7 @@ export const dentalServices: DentalServiceItem[] = [
 ];
 
 const dentalServiceImageMap: Record<string, string> = {
-  "root-canal-treatment": "/images/dental-root-canal.png",
+  "root-canal-treatment": "/images/dental-root-canal.jpg",
   "dental-implants": "/images/dental-implants.jpg",
   "clear-aligners": "/images/dental-aligners.png",
   "digital-x-ray": "/images/dental-xray.jpg",
