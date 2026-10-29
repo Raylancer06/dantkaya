@@ -39,10 +39,11 @@ export const appointmentRequestSchema = z.object({
     .refine(
       (val) => {
         const selected = new Date(`${val}T00:00:00`);
-        const earliest = new Date(`${EARLIEST_APPOINTMENT_DATE}T00:00:00`);
-        return !Number.isNaN(selected.getTime()) && selected >= earliest;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return !Number.isNaN(selected.getTime()) && selected >= today;
       },
-      { message: "Appointments are available starting from 27 October 2026 onwards." }
+      { message: "Please select today or a future date for your consultation." }
     ),
   preferredTimeSlot: z.enum(
     [

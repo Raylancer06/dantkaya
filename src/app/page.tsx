@@ -85,27 +85,6 @@ export default function HomePage() {
     <>
       {/* SECTION 1: ELEVATED VISUAL HERO */}
       <section className="relative w-full bg-ivory-bg overflow-hidden border-b border-border-subtle">
-        {/* Grand Opening Announcement Ribbon */}
-        <div className="w-full bg-espresso text-ivory-bg py-2.5 px-4 text-center border-b border-white/10 relative z-10">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-[13px] font-medium">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-champagne-gold text-espresso text-[11px] font-bold uppercase tracking-wider">
-              Grand Opening
-            </span>
-            <span>
-              <strong>Launching on 26 October 2026</strong> • Boring Canal Road, Patna
-            </span>
-            <span className="text-[#fedb9b] hidden md:inline">
-              (Consultations starting from 27 Oct)
-            </span>
-            <Link
-              href="/book-appointment"
-              className="inline-flex items-center gap-1 text-[#fedb9b] hover:text-white underline font-semibold ml-1 sm:ml-2 transition-colors"
-            >
-              Advance Booking Open →
-            </Link>
-          </div>
-        </div>
-
         {/* Subtle ambient radial glow */}
         <div
           className="pointer-events-none absolute -top-24 right-0 w-[520px] h-[520px] rounded-full bg-champagne-gold/10 blur-3xl"
@@ -115,21 +94,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: High-Impact Headline, CTAs & Visual Quick-Access Cards */}
           <RevealOnScroll className="lg:col-span-7 flex flex-col justify-center">
-            {/* Launching Badge & Clinic Identifier */}
-            <div className="flex flex-wrap items-center gap-2.5 mb-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f6eee3] border border-[#dfcca9] shadow-2xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-gold opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#b89564]" />
-                </span>
-                <span className="text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.16em] text-espresso">
-                  Launching on 26 October 2026
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-secondary border border-border-subtle text-[11px] font-medium text-muted-grey">
-                <span className="font-semibold text-espresso">Dant काया</span>
-                <span>• Boring Canal Road, Patna</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ivory-secondary border border-border-subtle w-fit mb-5">
+              <span
+                className="w-2 h-2 rounded-full bg-champagne-gold inline-block"
+                aria-hidden="true"
+              />
+              <span className="text-[14px] sm:text-[15px] font-bold text-espresso tracking-tight">
+                Dant काया
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.16em] text-muted-grey">
+                • Multispeciality Clinic • Patna
+              </span>
             </div>
 
             <h1 className="font-heading font-bold text-espresso text-[40px] sm:text-[54px] lg:text-[62px] leading-[1.06] tracking-tight">
@@ -159,8 +134,8 @@ export default function HomePage() {
               </SecondaryButton>
             </div>
             <p className="text-[12px] text-muted-grey mt-3 flex items-center gap-1.5 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-champagne-gold shrink-0" />
-              <span>Opening on 26 Oct 2026 • Patient consultations available from 27 Oct</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0" />
+              <span>Appointments &amp; emergency consultations available today</span>
             </p>
 
             {/* Interactive Visual Quick-Access Treatment Strip */}

@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import {
   appointmentRequestSchema,
-  EARLIEST_APPOINTMENT_DATE,
   type AppointmentRequestValues,
 } from "@/lib/validation";
 import { doctors } from "@/data/doctors";
@@ -42,10 +41,8 @@ export function AppointmentBookingForm() {
     null
   );
 
-  // Earliest consultation date: disabled prior to 27 October 2026
-  const todayStr = new Date().toISOString().split("T")[0];
-  const minBookingDate =
-    todayStr > EARLIEST_APPOINTMENT_DATE ? todayStr : EARLIEST_APPOINTMENT_DATE;
+  // Earliest consultation date: current date onwards
+  const minBookingDate = new Date().toISOString().split("T")[0];
 
   const {
     register,
@@ -256,22 +253,6 @@ export function AppointmentBookingForm() {
         </p>
       </div>
 
-      {/* Notice Banner: Appointments Open from 27 October */}
-      <div className="bg-[#fcf8f2] border border-[#e8dcc8] rounded-[6px] p-3.5 flex items-start gap-3 text-xs text-espresso">
-        <CalendarClock
-          className="w-4 h-4 text-champagne-gold shrink-0 mt-0.5"
-          aria-hidden="true"
-        />
-        <div>
-          <p className="font-semibold text-espresso">
-            Appointments Available from 27 October 2026 Onwards
-          </p>
-          <p className="text-muted-grey mt-0.5 leading-relaxed">
-            Consultations prior to 27 October are currently disabled. You can reserve your slot for 27 October onwards in advance below.
-          </p>
-        </div>
-      </div>
-
       {serverError && (
         <div
           role="alert"
@@ -471,17 +452,12 @@ export function AppointmentBookingForm() {
       {/* Row 4: Preferred Date & Preferred Time Window */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <label
-              htmlFor="preferredDate"
-              className="block text-xs font-semibold uppercase tracking-wider text-espresso"
-            >
-              Preferred Date <span className="text-error">*</span>
-            </label>
-            <span className="text-[11px] font-medium text-champagne-gold">
-              Available from 27 Oct onwards
-            </span>
-          </div>
+          <label
+            htmlFor="preferredDate"
+            className="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2"
+          >
+            Preferred Date <span className="text-error">*</span>
+          </label>
           <input
             id="preferredDate"
             type="date"
