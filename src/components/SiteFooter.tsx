@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { MessageCircle } from "lucide-react";
 import { clinicInfo } from "@/data/clinic";
 import {
   footerQuickLinks,
@@ -77,6 +78,61 @@ export function SiteFooter() {
                   {clinicInfo.email}
                 </a>
               </p>
+            </div>
+
+            {/* Social Media Channels */}
+            <div className="flex items-center gap-2.5 pt-3" aria-label="Social media channels">
+              <a
+                href={clinicInfo.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Dant काया Clinic"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-ivory-bg/85 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
+              </a>
+              <a
+                href={clinicInfo.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dant काया Clinic on Instagram"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#E4405F] hover:text-white flex items-center justify-center text-ivory-bg/85 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href={clinicInfo.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dant काया Clinic on Facebook"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#1877F2] hover:text-white flex items-center justify-center text-ivory-bg/85 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
             </div>
           </div>
 

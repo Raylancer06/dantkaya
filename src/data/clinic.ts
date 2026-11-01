@@ -8,6 +8,8 @@ export interface ClinicInfo {
   phoneRaw: string;
   whatsappNumber: string;
   whatsappUrl: string;
+  facebookUrl: string;
+  instagramUrl: string;
   email: string;
   address: {
     street: string;
@@ -57,6 +59,8 @@ export const clinicInfo: ClinicInfo = {
   whatsappNumber: "919189332525",
   whatsappUrl:
     "https://wa.me/919189332525?text=Hello%20Dant%20%E0%A4%95%E0%A4%BE%E0%A4%AF%E0%A4%BE%20Clinic,%20I%20would%20like%20to%20schedule%20a%20consultation.",
+  facebookUrl: "https://www.facebook.com/share/14h78rUM7iA/?mibextid=wwXIfr",
+  instagramUrl: "https://www.instagram.com/dantkayapatna",
   email: "appointment@dantkaya.com",
   address: {
     street: "Boring Canal Road",

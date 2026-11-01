@@ -93,7 +93,7 @@ export function SiteHeader() {
                 <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
               </a>
               <a
-                href="https://www.instagram.com/dantkayapatna"
+                href={clinicInfo.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dant काया Clinic on Instagram"
@@ -115,7 +115,7 @@ export function SiteHeader() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/dantkayapatna"
+                href={clinicInfo.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dant काया Clinic on Facebook"
